@@ -4,3 +4,14 @@ button {
     background-color: seagreen;
     color: white;
 }
+
+#input {
+    border: 2px solid darkgrey;
+    padding: 5px;
+    
+}
+
+#secondDiv {
+    padding: 30px;
+    text-align: right;
+}
