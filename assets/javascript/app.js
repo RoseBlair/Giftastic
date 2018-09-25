@@ -68,20 +68,11 @@ $("button").on("click", function() {
     
 
 
-
-
-
-
 $(".search").on("click", function() {
-
     
-    var input = ":input"
-    var newUrl = "";
-    var newUrl = baseUrl + input + "&api_key=" + apiKey + "&limit=10";
-    var newVideo = $("<img>");
-    newVideo.attr("src", results[i].images.fixed_height_still.url);
-    newVideo.addClass(".gif");
-    ("#forButtons").append("<button>");
-    $(this).closest('form').find("input[type=text], textarea").val("");
-    
+    var data = $("#input").val().trim();
+    var newButton = $("<button>").attr(data-funny, data);
+    $("#gifPlace").append(newButton);
+ 
+   
 });
