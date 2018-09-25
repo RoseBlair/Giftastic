@@ -33,10 +33,9 @@ $("button").on("click", function() {
     for (i = 0; i < results.length; i++) {
 
         
-        var dataStill;
-        var smallVideo = $("<img>");
-        smallVideo.attr("src", results[i].images.fixed_height_still.url);
-        smallVideo.addClass(".gif");
+        var dataStill = results[i].images.fixed_height_still.url;
+        var dataMoving = results[i].images.fixed_height.url;
+        var smallVideo = $("<img>").attr("src", dataStill).addClass("gif");
         var newDivs = $("<div>");
         newDivs.append(smallVideo);
         $("#gifPlace").prepend(newDivs);
@@ -50,33 +49,39 @@ $("button").on("click", function() {
 
         };
  
+        $(".gif").on("click", function() {
+    
+    
+            console.log("good job");
+            
+            if ("src" === results[i].images.fixed_height_still.url) {
+                (".gif").attr("src", results[i].images.fixed_height.url);
+            }
+        
+            else if ("src" === results[i].images.fixed_height.url) {
+                (".gif").attr("src", results[i].images.fixed_height_still.url);
+            };
+        });
+
     }); 
 
 });
     
 
 
-$(".gif").on("click", function() {
-    
-    console.log("good job");
-    
-    if ("src" === results[i].images.fixed_height_still.url) {
-        (".gif").attr("src", results[i].images.fixed_height_still.url);
-    }
 
-    else if ("src" === results[i].images.fixed_height.url) {
-        (".gif").attr("src", results[i].images.fixed_height.url);
-    };
-});
 
 
 
 $(".search").on("click", function() {
 
+    
     var input = ":input"
     var newUrl = "";
     var newUrl = baseUrl + input + "&api_key=" + apiKey + "&limit=10";
-    console.log(newUrl);
+    var newVideo = $("<img>");
+    newVideo.attr("src", results[i].images.fixed_height_still.url);
+    newVideo.addClass(".gif");
     ("#forButtons").append("<button>");
     $(this).closest('form').find("input[type=text], textarea").val("");
     
