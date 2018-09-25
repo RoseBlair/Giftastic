@@ -28,6 +28,8 @@ $("button").on("click", function() {
 
     .then(function(response) {
 
+        $("#gifPlace").empty();
+
     var results = response.data;
 
     for (i = 0; i < results.length; i++) {
@@ -35,31 +37,28 @@ $("button").on("click", function() {
         
         var dataStill = results[i].images.fixed_height_still.url;
         var dataMoving = results[i].images.fixed_height.url;
-        var smallVideo = $("<img>").attr("src", dataStill).addClass("gif");
+        var smallVideo = $("<img>").attr("src", dataStill).addClass("gif").attr("data-still", dataStill).attr("data-moving", dataMoving).attr("data-state", "still");
         var newDivs = $("<div>");
         newDivs.append(smallVideo);
         $("#gifPlace").prepend(newDivs);
 
        
-        var p = $("<p>").text("Rating: " + rating);
-        // Storing the result item's rating
-        var rating = results[i].rating;
-
-        console.log(results);
+      
 
         };
  
         $(".gif").on("click", function() {
-    
-    
-            console.log("good job");
             
-            if ("src" === results[i].images.fixed_height_still.url) {
-                (".gif").attr("src", results[i].images.fixed_height.url);
+            var state = $(this).attr("data-state");
+
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-moving"));
+                $(this).attr("data-state", "moving")
             }
-        
-            else if ("src" === results[i].images.fixed_height.url) {
-                (".gif").attr("src", results[i].images.fixed_height_still.url);
+    
+            else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
             };
         });
 
