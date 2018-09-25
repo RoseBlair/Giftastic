@@ -5,6 +5,11 @@ button {
     color: white;
 }
 
+#search {
+    width: 150px;
+    height: 30px;
+}
+
 #input {
     border: 2px solid darkgrey;
     padding: 5px;
