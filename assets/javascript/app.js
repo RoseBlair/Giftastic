@@ -13,7 +13,7 @@ var baseUrl = "http://api.giphy.com/v1/gifs/search?q=";
 var apiKey = "c8oLIYBQM3lhMfDfkMfIP74UpD7SJjiN"; 
                 
 
-//$.get(giphyUrl);
+
 
 $("button").on("click", function() {
 
@@ -35,7 +35,7 @@ $("button").on("click", function() {
         
 
         var smallVideo = $("<img>");
-        smallVideo.attr("src", results[i].images.fixed_height.url);
+        smallVideo.attr("src", results[i].images.fixed_height_still.url);
         var newDivs = $("<div>");
         newDivs.append(smallVideo);
         $("#gifPlace").prepend(newDivs);
@@ -49,7 +49,22 @@ $("button").on("click", function() {
 
     console.log(results);
 
-    }
+    };
+
+    $("img").click (function(results, smallVideo) {
+
+
+        this.attr("src", results[i].images.fixed_height.url);
+        newDivs.append(smallVideo);
+        console.log(results.images.fixed_height.url);
+
+       
+    });  
+
 
     });
+
+
+   
+
 });
