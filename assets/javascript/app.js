@@ -48,32 +48,36 @@ $("button").on("click", function() {
 
         console.log(results);
 
-        $(".gif").on("click", function() {
-            console.log("good job");
-        });
-
-    };
+        };
  
-}); 
+    }); 
+
+});
     
-        $(".gif").on("click", function() {
-            if ("src" === results[i].images.fixed_height_still.url) {
-                (".gif").attr("src", results[i].images.fixed_height_still.url);
-            }
-
-            else if ("src" === results[i].images.fixed_height.url) {
-                (".gif").attr("src", results[i].images.fixed_height.url);
-            };
-        });
 
 
-    });
+$(".gif").on("click", function() {
+    
+    console.log("good job");
+    
+    if ("src" === results[i].images.fixed_height_still.url) {
+        (".gif").attr("src", results[i].images.fixed_height_still.url);
+    }
+
+    else if ("src" === results[i].images.fixed_height.url) {
+        (".gif").attr("src", results[i].images.fixed_height.url);
+    };
+});
+
 
 
 $(".search").on("click", function() {
 
-var input = ":input"
-var newButton = baseUrl + input + "&api_key=" + apiKey + "&limit=10";
-$(this).closest('form').find("input[type=text], textarea").val("");
+    var input = ":input"
+    var newUrl = "";
+    var newUrl = baseUrl + input + "&api_key=" + apiKey + "&limit=10";
+    console.log(newUrl);
+    ("#forButtons").append("<button>");
+    $(this).closest('form').find("input[type=text], textarea").val("");
     
-    });
+});
