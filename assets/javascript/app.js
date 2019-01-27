@@ -22,7 +22,7 @@ var apiKey = "c8oLIYBQM3lhMfDfkMfIP74UpD7SJjiN";
 
 //on click function for any button
 
-$("button").on("click", function() {
+$(document).on("click", "button", function() {
 
 //creation of a variable that gives the clicked button the data-funny attribute. 
 
@@ -108,11 +108,11 @@ $("button").on("click", function() {
 //This was supposed to append new buttons into the button div. Wasn't able to figure it out, 
 //unfortunately.
 
-$(".search").on("click", function() {
+$("#search").on("click", function() {
     event.preventDefault();
     var data = $("#input").val().trim();
-    var newButton =  $("<button>").attr("data-funny", data).addclass("newButton");
-    $("#gifPlace").append(newButton);
+    var newButton =  $("<button>").attr("data-funny", data).html(data);
+    $("#forButtons").append(newButton);
    
 });
 
