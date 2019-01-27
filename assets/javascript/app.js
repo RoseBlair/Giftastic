@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 //the beginning of the API URL
 
-var baseUrl = "http://api.giphy.com/v1/gifs/search?q=";
+var baseUrl = "https://api.giphy.com/v1/gifs/search?q=";
 
 // The API key
 
