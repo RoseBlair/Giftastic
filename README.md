@@ -2,7 +2,7 @@
 A Gif-Fetching App
 
 <p align="center">
-<a data-flickr-embed="true"  href="https://www.flickr.com/photos/183376787@N05/48529579822/in/dateposted-public/" title="giftastic"><img src="https://live.staticflickr.com/65535/48529579822_92730b3251_k.jpg" width="60%" alt="Giftastic" box-shadow="10px 10px grey"></a>
+<a data-flickr-embed="true"  href="https://www.flickr.com/photos/183376787@N05/48529579822/in/dateposted-public/" title="giftastic"><img src="https://live.staticflickr.com/65535/48529579822_92730b3251_k.jpg" width="60%" alt="Giftastic" "style=box-shadow: 10px 10px grey"></a>
 </p>
 
 Click on the name of a comedian and see ten related gifs.
